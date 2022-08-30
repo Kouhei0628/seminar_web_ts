@@ -1,0 +1,1 @@
+export const ND = new Date().getTime();
