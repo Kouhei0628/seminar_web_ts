@@ -8,11 +8,11 @@ import navImages from "../../data/mainNav-img";
 import { PubUrl } from "../../data/PubUrl";
 import { RefContext, SetRefContext } from "../Home";
 
-const FixNavListItem = ({ itemRef, alt }) => {
-  const [isSelected, setIsSelected] = useState(false);
+const FixNavListItem = ({ itemRef, alt }: { itemRef: string; alt: string }) => {
+  const [isSelected, setIsSelected] = useState<boolean>(false);
   const vRef = useContext(RefContext);
   const setRef = useContext(SetRefContext);
-  const oCScroll = _ref => setRef(_ref);
+  const oCScroll = (_ref: string) => setRef(_ref);
 
   useEffect(() => {
     if (itemRef === vRef) {

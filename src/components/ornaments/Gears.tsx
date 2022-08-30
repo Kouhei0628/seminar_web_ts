@@ -41,12 +41,12 @@ type GearProps = {
   speed?: number;
 };
 
-const GearWrap = styled.div.attrs<GearProps>(
-  ({ size, positionX, positionY, isLeft }) => ({
+const GearWrap = styled.div.attrs(
+  ({ size, positionX, positionY, isLeft }: GearProps) => ({
     style: {
       width: `${{ size }}px`,
       height: `${{ size }}px`,
-      marginTop: -{ positionY },
+      marginTop: `-${positionY}`,
       transform: `translateX(${{ isLeft } ? "-" : ""}${{ positionX }}%)`,
     },
   })
@@ -54,7 +54,7 @@ const GearWrap = styled.div.attrs<GearProps>(
   overflow: visible;
 `;
 
-const GearObj = styled.div.attrs<GearProps>(({ speed, type }) => ({
+const GearObj = styled.div.attrs(({ speed, type }: GearProps) => ({
   style: {
     animation: `gearRotate ${{ speed }}s linear infinite`,
     backgroundImage: `url(${PubUrl}/img/gears/gear_${{ type }}.svg?ver=1.0.0)`,

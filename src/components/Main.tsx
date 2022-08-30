@@ -14,10 +14,10 @@ import React from "react";
 
 const Main = React.memo(() => {
   return (
-    <main style={mainStyle} className='main'>
+    <All className='main'>
       <Header />
       <MainWrap className='main__wrap'>
-        <Navigation id='navigation' />
+        <Navigation />
         <UnderNavi className='under-navi'>
           <Ornaments />
           <Story />
@@ -29,22 +29,23 @@ const Main = React.memo(() => {
           <Footer />
         </UnderNavi>
       </MainWrap>
-    </main>
+    </All>
   );
 });
 export default Main;
+
+const All = styled.div`
+  text-align: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+`;
 
 const UnderNavi = styled.div`
   width: 100%;
   height: 100%;
   overflow: hidden;
 `;
-const mainStyle = {
-  textAlign: "center",
-  position: "relative",
-  width: "100%",
-  height: "100%",
-};
 
 const MainWrap = styled.div`
   width: 100%;

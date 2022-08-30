@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
 
 const TimeComp = () => {
-  const [time, setTime] = useState(null);
+  const [time, setTime] = useState<string>("");
   useEffect(() => {
     // 初回レンダリング時の時刻を表示
-    const deadline = new Date(2022, 10 - 1, 17, 0);
-    const now = new Date();
-    const diff = deadline - now;
+    const deadline: Date = new Date(2022, 10 - 1, 17, 0);
+    const now: Date = new Date();
+    const diff: number = deadline.getTime() - now.getTime();
     const d = Math.floor(diff / (1000 * 60 * 60 * 24)).toString();
     const h = Math.floor(
       (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
@@ -18,7 +18,7 @@ const TimeComp = () => {
     const timer = window.setInterval(() => {
       const _deadline = new Date(2022, 10 - 1, 17, 0);
       const _now = new Date();
-      const _diff = _deadline - _now;
+      const _diff = _deadline.getTime() - _now.getTime();
       const _d = Math.floor(_diff / (1000 * 60 * 60 * 24)).toString();
       const _h = Math.floor(
         (_diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)

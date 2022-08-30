@@ -9,7 +9,7 @@ import { SetRefContext } from "../Home";
 const Navigation = () => {
   const setRef = useContext(SetRefContext);
   return (
-    <NavigationStyle>
+    <NavigationStyle id="navigation">
       <NavListWrap>
         <NaviList>
           {navImages.map(ni => (

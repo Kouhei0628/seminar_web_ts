@@ -5,11 +5,12 @@ import { PubUrl } from "../data/PubUrl";
 import navImages from "../data/mainNav-img";
 import { colors } from "../data/colors";
 import { userAgentFlags } from "../data/userAgentFlags";
+import styled from "styled-components";
 import FixNavListItem from "./sections/NavIconWrap";
 
 const FixNavigation = () => {
-  const [isVisible, setIsVisible] = useState(false);
-  const isNarrow = useMedia({ minWidth: breakpoints.m });
+  const [isVisible, setIsVisible] = useState<boolean>(false);
+  const isNarrow: boolean = useMedia({ minWidth: breakpoints.m });
 
   const toggleVisibility = () => {
     const UA = userAgentFlags;
@@ -39,7 +40,7 @@ const FixNavigation = () => {
   const twiLink = "https://twitter.com/kaishizemi2022";
 
   return (
-    <>
+    <All>
       <FixSNSIcon className={`${isVisible ? "visible" : ""}`}>
         <a href={twiLink} target={`_blank`} rel='noreferrer'>
           <img
@@ -55,10 +56,14 @@ const FixNavigation = () => {
           ))}
         </FixNavList>
       </FixWrap>
-    </>
+    </All>
   );
 };
 export default FixNavigation;
+
+const All = styled.div`
+  transform: translateZ(1000px);
+`;
 
 const FixSNSIcon = styled.div`
   position: fixed;

@@ -4,7 +4,7 @@ import { breakpoints } from "../../breakpoints/breakpoints";
 import members from "../../data/members";
 import { PubUrl } from "../../data/PubUrl";
 
-const MemberListItem = ({ id, name }) => {
+const MemberListItem = ({ id, name }: { id: number; name: string }) => {
   const { ref, inView } = useInView({
     root: null,
     threshold: 1,
@@ -13,7 +13,7 @@ const MemberListItem = ({ id, name }) => {
   });
 
   return (
-    <MemberListItemS id={id} ref={ref}>
+    <MemberListItemS ref={ref}>
       <div className='list-wrap'>
         <ImageWrap>
           <MembersGear
@@ -32,7 +32,7 @@ const MemberListItem = ({ id, name }) => {
 };
 export default MemberListItem;
 
-const multipleOf5 = members
+const multipleOf5: string[] = members
   .filter(m => m.id % 5 === 0 || (m.id + 1) % 5 === 0)
   .map(
     m =>

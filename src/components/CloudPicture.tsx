@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import { breakpoints } from "../breakpoints/breakpoints";
+import styled from "styled-components";
 import { PubUrl } from "../data/PubUrl";
 
 const CloudPicture = () => {
