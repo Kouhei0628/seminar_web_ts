@@ -168,7 +168,7 @@ const ProvVisual = styled.div`
     transform-origin: center center;
     &.visible {
       opacity: 1;
-      animation: scaleIn 2s ease forwards;
+      animation: scaleIn 2s ease forwards 1s;
       @keyframes scaleIn {
         0% {
           transform: scale(1.5) translate(18%, -10%);
