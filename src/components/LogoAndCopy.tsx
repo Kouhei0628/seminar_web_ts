@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { breakpoints } from "../breakpoints/breakpoints";
 import { PubUrl } from "../data/PubUrl";
 
-const LogoAndCopy = () => {
+const LogoAndCopy: React.FC = () => {
   return (
     <LogoAndCopyS>
       <img

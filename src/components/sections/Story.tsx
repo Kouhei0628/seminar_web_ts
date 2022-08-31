@@ -4,7 +4,7 @@ import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
 import StoryText from "./StoryText";
 
-const Story = () => {
+const Story: React.FC = () => {
   return (
     <StorySection>
       <CloudWrapper>

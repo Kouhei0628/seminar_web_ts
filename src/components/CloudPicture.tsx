@@ -2,7 +2,7 @@ import { breakpoints } from "../breakpoints/breakpoints";
 import styled from "styled-components";
 import { PubUrl } from "../data/PubUrl";
 
-const CloudPicture = () => {
+const CloudPicture: React.FC = () => {
   return (
     <PictureStyle>
       <picture className='for-pc'>

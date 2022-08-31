@@ -3,10 +3,10 @@ import styled from "styled-components";
 import { PubUrl } from "../data/PubUrl";
 import { LoadingContext } from "./Home";
 
-const Loading = () => {
+const Loading: React.FC = () => {
   const [isLoaded] = useContext(LoadingContext);
   return (
-    <LoadWrap className={`${isLoaded ? "hidden" : "visible"}`}>
+    <LoadWrap className={`${isLoaded ? "hidden" : ""}`}>
       <div>
         <img
           src={`${PubUrl}/img/header/header_logo.png`}

@@ -12,7 +12,7 @@ import Header from "./Header";
 import Ornaments from "./ornaments/Ornaments";
 import React from "react";
 
-const Main = React.memo(() => {
+const Main: React.FC = React.memo(() => {
   return (
     <All className='main'>
       <Header />

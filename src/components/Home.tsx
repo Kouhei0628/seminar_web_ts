@@ -18,7 +18,7 @@ export const LoadingContext = createContext<
   [boolean, Dispatch<SetStateAction<boolean>>]
 >([false, () => {}]);
 
-const Home = () => {
+const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [ref, setRef] = useState<string>("");
   const elmRef = useRef<string>("");
@@ -27,14 +27,13 @@ const Home = () => {
   const newRef = elmRef.current;
   // ページ内スクロール
   useEffect(() => {
-    const newElm = document.getElementById(newRef)!;
+    const newElm: HTMLElement = document.getElementById(newRef)!;
     if (!newElm) return;
-    const time = window.setTimeout(() => {
+    const time: number = window.setTimeout(() => {
       window.scrollTo({
         top: newElm.offsetTop,
         behavior: "smooth",
         left: 0,
-        // threshold: 0,
       });
     }, 1);
     return () => window.clearTimeout(time);

@@ -2,8 +2,8 @@ import styled from "styled-components";
 import { breakpoints } from "../breakpoints/breakpoints";
 import { PubUrl } from "../data/PubUrl";
 
-const FooterCloud = () => {
-  const twitterLink = "https://twitter.com/kaishizemi2022";
+const FooterCloud: React.FC = () => {
+  const twitterLink: string = "https://twitter.com/kaishizemi2022";
   return (
     <FooterCloudWrap>
       <a href={twitterLink} target='_blank' rel='noreferrer'>

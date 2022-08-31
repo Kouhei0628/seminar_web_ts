@@ -8,7 +8,7 @@ import CloudPicture from "./CloudPicture";
 import { LoadingContext } from "./Home";
 import LogoAndCopy from "./LogoAndCopy";
 
-const Header = React.memo(() => {
+const Header: React.FC = React.memo(() => {
   const [isLoaded, setIsLoaded] = useContext(LoadingContext);
   return (
     <header className='header'>
