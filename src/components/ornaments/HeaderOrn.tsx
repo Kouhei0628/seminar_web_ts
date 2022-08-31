@@ -1,7 +1,11 @@
 import styled from "styled-components";
 import { PubUrl } from "../../data/PubUrl";
 
-const HeaderOrn = ({ logo }: { logo: string }) => {
+type Props = {
+  logo: string;
+};
+
+const HeaderOrn: React.FC<Props> = ({ logo }) => {
   return (
     <HeaderWrap>
       <HeaderImgA>

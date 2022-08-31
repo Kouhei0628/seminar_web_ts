@@ -6,10 +6,10 @@ import navImages from "../../data/mainNav-img";
 import { PubUrl } from "../../data/PubUrl";
 import { SetRefContext } from "../Home";
 
-const Navigation = () => {
+const Navigation: React.FC = () => {
   const setRef = useContext(SetRefContext);
   return (
-    <NavigationStyle id="navigation">
+    <NavigationStyle id='navigation'>
       <NavListWrap>
         <NaviList>
           {navImages.map(ni => (

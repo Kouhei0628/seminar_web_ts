@@ -4,7 +4,12 @@ import { breakpoints } from "../../breakpoints/breakpoints";
 import members from "../../data/members";
 import { PubUrl } from "../../data/PubUrl";
 
-const MemberListItem = ({ id, name }: { id: number; name: string }) => {
+interface Props {
+  id: number;
+  name: string;
+}
+
+const MemberListItem: React.FC<Props> = ({ id, name }) => {
   const { ref, inView } = useInView({
     root: null,
     threshold: 1,

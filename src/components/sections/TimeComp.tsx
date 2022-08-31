@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const TimeComp = () => {
+const TimeComp: React.FC = () => {
   const [time, setTime] = useState<string>("");
   useEffect(() => {
     // 初回レンダリング時の時刻を表示

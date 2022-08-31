@@ -6,7 +6,7 @@ import summaries from "../../data/summaries";
 import HeaderOrn from "../ornaments/HeaderOrn";
 import { StCloudTop } from "./Story";
 
-const Summary = () => {
+const Summary: React.FC = () => {
   return (
     <SummarySection>
       <CloudWrap>

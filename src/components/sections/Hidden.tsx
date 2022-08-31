@@ -5,7 +5,7 @@ import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
 // import TimeComp from "./TimeComp";
 
-const Hidden = () => {
+const Hidden: React.FC = () => {
   return (
     <HiddenSection id='hidden'>
       <HeaderOrn logo='hidden' />

@@ -5,7 +5,7 @@ import thieves from "../../data/coats";
 import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
 
-const Thieves = () => {
+const Thieves: React.FC = () => {
   const options = {
     threshold: 0.2,
     triggerOnce: true,

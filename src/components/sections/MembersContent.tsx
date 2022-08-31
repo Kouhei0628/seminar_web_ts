@@ -3,7 +3,7 @@ import { breakpoints } from "../../breakpoints/breakpoints";
 import members from "../../data/members";
 import MemberListItem from "./MemberListItem";
 
-const MembersContent = () => {
+const MembersContent: React.FC = () => {
   return (
     <MemContent>
       <MembersList>

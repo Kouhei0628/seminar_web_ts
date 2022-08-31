@@ -4,7 +4,7 @@ import { breakpoints } from "../../breakpoints/breakpoints";
 import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
 
-const Location = () => {
+const Location: React.FC = () => {
   const { ref, inView } = useInView({ threshold: 0.2, triggerOnce: true });
   return (
     <LocationSection ref={ref} id='location'>

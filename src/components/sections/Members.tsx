@@ -5,7 +5,7 @@ import HeaderOrn from "../ornaments/HeaderOrn";
 import MembersContent from "./MembersContent";
 import { CloudTop, CloudWrap } from "./Summary";
 
-const Members = () => {
+const Members: React.FC = () => {
   return (
     <MembersSection>
       <CWrap>

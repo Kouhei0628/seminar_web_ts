@@ -4,7 +4,7 @@ import { breakpoints } from "../breakpoints/breakpoints";
 import { PubUrl } from "../data/PubUrl";
 import FooterCloud from "./FooterCloud";
 
-const Footer = React.memo(() => {
+const Footer: React.FC = React.memo(() => {
   return (
     <FooterWrap className='footer'>
       <FooterInner>

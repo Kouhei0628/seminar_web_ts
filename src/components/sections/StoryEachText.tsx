@@ -2,7 +2,11 @@ import { ReactNode } from "react";
 import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 
-const StoryEachText = ({ children }: { children: ReactNode | ReactNode[] }) => {
+interface Props {
+  children: ReactNode;
+}
+
+const StoryEachText: React.FC<Props> = ({ children }) => {
   const { ref, inView } = useInView({
     threshold: 0,
     rootMargin: "-50px",

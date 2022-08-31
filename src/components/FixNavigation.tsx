@@ -8,11 +8,11 @@ import { userAgentFlags } from "../data/userAgentFlags";
 import styled from "styled-components";
 import FixNavListItem from "./sections/NavIconWrap";
 
-const FixNavigation = () => {
+const FixNavigation: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const isNarrow: boolean = useMedia({ minWidth: breakpoints.m });
+  const isNarrow = useMedia({ minWidth: breakpoints.m });
 
-  const toggleVisibility = () => {
+  const toggleVisibility = (): void => {
     const UA = userAgentFlags;
     // 1200pxスクロールしたら表示する
     if (!isNarrow) {
@@ -40,7 +40,7 @@ const FixNavigation = () => {
   const twiLink = "https://twitter.com/kaishizemi2022";
 
   return (
-    <All>
+    <div>
       <FixSNSIcon className={`${isVisible ? "visible" : ""}`}>
         <a href={twiLink} target={`_blank`} rel='noreferrer'>
           <img
@@ -56,14 +56,10 @@ const FixNavigation = () => {
           ))}
         </FixNavList>
       </FixWrap>
-    </All>
+    </div>
   );
 };
 export default FixNavigation;
-
-const All = styled.div`
-  transform: translateZ(1000px);
-`;
 
 const FixSNSIcon = styled.div`
   position: fixed;
