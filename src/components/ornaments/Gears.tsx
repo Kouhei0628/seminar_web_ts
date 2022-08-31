@@ -45,7 +45,7 @@ const GearWrap = styled.div.attrs((pr: GearProps) => ({
   style: {
     width: `${pr.size}px`,
     height: `${pr.size}px`,
-    marginTop: `-${pr.positionY}`,
+    marginTop: `-${pr.positionY}px`,
     transform: `translateX(${pr.isLeft ? "-" : ""}${pr.positionX}%)`,
   },
 }))<GearProps>`
