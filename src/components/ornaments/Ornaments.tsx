@@ -6,7 +6,7 @@ import { gsap } from "gsap";
 import ScrollTrigger from "gsap/ScrollTrigger";
 
 const Ornaments = React.memo(() => {
-  const gearAmount = [...Array(150)];
+  const gearAmount: string[] = [...Array(150).fill("")];
   const option = {
     scrollTrigger: {
       trigger: ".under-navi",
