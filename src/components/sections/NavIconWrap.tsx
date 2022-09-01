@@ -17,7 +17,6 @@ const FixNavListItem: React.FC<Props> = ({ itemRef, alt }) => {
   const [isSelected, setIsSelected] = useState<boolean>(false);
   const vRef = useContext(RefContext);
   const setRef = useContext(SetRefContext);
-  const oCScroll = (_ref: string) => setRef(_ref);
 
   useEffect(() => {
     if (itemRef === vRef) {
@@ -28,7 +27,7 @@ const FixNavListItem: React.FC<Props> = ({ itemRef, alt }) => {
   }, [itemRef, vRef]);
   return (
     <FixNavListItemS className={`${isSelected ? "visible" : ""}`}>
-      <Link onClick={() => oCScroll(itemRef)} to={`/#${itemRef}`}>
+      <Link onClick={() => setRef(itemRef)} to={`/#${itemRef}`}>
         <NavIconWrap>
           <NavIcon
             className={`navicon`}
