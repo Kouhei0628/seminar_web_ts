@@ -26,7 +26,7 @@ const FixNavListItem: React.FC<Props> = ({ itemRef, alt }) => {
     }
   }, [itemRef, vRef]);
   return (
-    <FixNavListItemS className={`${isSelected ? "visible" : ""}`}>
+    <FixNavListItemS className={`${isSelected ? "selected" : ""}`}>
       <Link onClick={() => setRef(itemRef)} to={`/#${itemRef}`}>
         <NavIconWrap>
           <NavIcon
@@ -78,7 +78,7 @@ const FixNavListItemS = styled.li`
       width: 70%;
     }
   }
-  &.visible {
+  &.selected {
     transform: scale(0.95);
     filter: brightness(50%);
   }
