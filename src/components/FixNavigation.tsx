@@ -10,7 +10,7 @@ import FixNavListItem from "./sections/NavIconWrap";
 
 const FixNavigation: React.FC = () => {
   const [isVisible, setIsVisible] = useState<boolean>(false);
-  const isNarrow = useMedia({ minWidth: breakpoints.m });
+  const isNarrow: boolean = useMedia({ minWidth: breakpoints.m });
 
   const toggleVisibility = (): void => {
     const UA = userAgentFlags;
@@ -37,7 +37,7 @@ const FixNavigation: React.FC = () => {
     return () => window.removeEventListener("scroll", toggleVisibility);
   });
 
-  const twiLink = "https://twitter.com/kaishizemi2022";
+  const twiLink: string = "https://twitter.com/kaishizemi2022";
 
   return (
     <div>

@@ -1,4 +1,6 @@
-const summaries = [
+import { Data } from "../@types/data";
+
+const summaries: Data[] = [
   {
     id: 1,
     img: "time",
