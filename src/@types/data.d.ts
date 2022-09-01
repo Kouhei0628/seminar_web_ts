@@ -3,4 +3,7 @@ export type Data = {
   name?: string;
   ref?: string;
   alt?: string;
+  img?: string;
+  title?: string;
+  description?: string;
 };
