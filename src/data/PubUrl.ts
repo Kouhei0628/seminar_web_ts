@@ -1,1 +1,1 @@
-export const PubUrl = process.env.PUBLIC_URL;
+export const PubUrl: string = process.env.PUBLIC_URL;
