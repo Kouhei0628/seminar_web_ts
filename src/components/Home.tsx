@@ -3,7 +3,6 @@ import {
   Dispatch,
   SetStateAction,
   useEffect,
-  useRef,
   useState,
 } from "react";
 import FixNavigation from "./FixNavigation";
@@ -21,13 +20,10 @@ export const LoadingContext = createContext<
 const Home: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
   const [ref, setRef] = useState<string>("");
-  const elmRef = useRef<string>("");
 
-  elmRef.current = ref;
-  const newRef = elmRef.current;
   // ページ内スクロール
   useEffect(() => {
-    const newElm: HTMLElement = document.getElementById(newRef)!;
+    const newElm: HTMLElement = document.getElementById(ref)!;
     if (!newElm) return;
     const time: number = window.setTimeout(() => {
       window.scrollTo({
@@ -37,10 +33,10 @@ const Home: React.FC = () => {
       });
     }, 1);
     return () => window.clearTimeout(time);
-  }, [newRef]);
+  }, [ref]);
   return (
     <LoadingContext.Provider value={[isLoaded, setIsLoaded]}>
-      <RefContext.Provider value={newRef}>
+      <RefContext.Provider value={ref}>
         <SetRefContext.Provider value={setRef}>
           <Loading />
           <FixNavigation />
