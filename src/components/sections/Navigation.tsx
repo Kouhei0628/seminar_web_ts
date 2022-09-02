@@ -84,6 +84,7 @@ const NaviList = styled.ul`
     &:nth-child(1),
     &:nth-child(6) {
       &:hover {
+        transform-origin: center 0%;
         transform: scale(1.1) translateY(-55%);
       }
     }
