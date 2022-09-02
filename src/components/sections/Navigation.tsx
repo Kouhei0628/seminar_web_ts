@@ -84,13 +84,14 @@ const NaviList = styled.ul`
     &:nth-child(1),
     &:nth-child(6) {
       &:hover {
-        transform: scale(1.1) translateY(-70%);
+        transform: scale(1.1) translateY(-55%);
       }
     }
     &:nth-child(1) {
+      height: 100%;
       left: 0;
       top: 50%;
-      transform: translateY(-70%) scale(1);
+      transform: translateY(-55%) scale(1);
     }
     &:nth-child(2) {
       left: 25%;
@@ -109,9 +110,10 @@ const NaviList = styled.ul`
       left: 55%;
     }
     &:nth-child(6) {
+      height: 100%;
       top: 50%;
       right: 0;
-      transform: translateY(-70%) scale(1);
+      transform: translateY(-55%) scale(1);
     }
   }
 `;
