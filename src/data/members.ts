@@ -1,6 +1,8 @@
-import { Data } from "../@types/data";
-
-const members: Data[] = [
+type Members = {
+  id: number;
+  name: string;
+}[];
+const members: Members = [
   {
     id: 1,
     name: "鬼頭花菜子",

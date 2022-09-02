@@ -1,6 +1,11 @@
-import { Data } from "../@types/data";
-
-const summaries: Data[] = [
+type Summaries = {
+  id: number;
+  img: string;
+  alt: string;
+  title: string;
+  description: string;
+}[];
+const summaries: Summaries = [
   {
     id: 1,
     img: "time",

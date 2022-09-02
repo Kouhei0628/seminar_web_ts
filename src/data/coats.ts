@@ -1,6 +1,8 @@
-import { Data } from "../@types/data";
-
-type Coats = Data[];
+type Coats = {
+  id: number;
+  name: string;
+  alt: string;
+}[];
 const thieves: Coats = [
   {
     id: 1,
