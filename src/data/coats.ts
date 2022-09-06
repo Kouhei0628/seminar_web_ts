@@ -2,8 +2,8 @@ type Coats = {
   id: number;
   name: string;
   alt: string;
-}[];
-const thieves: Coats = [
+};
+const thieves: Coats[] = [
   {
     id: 1,
     name: "イグニスアーラ",

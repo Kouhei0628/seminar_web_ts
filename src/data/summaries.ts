@@ -4,8 +4,8 @@ type Summaries = {
   alt: string;
   title: string;
   description: string;
-}[];
-const summaries: Summaries = [
+};
+const summaries: Summaries[] = [
   {
     id: 1,
     img: "time",
