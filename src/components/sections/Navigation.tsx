@@ -73,19 +73,18 @@ const NaviList = styled.ul`
     max-width: 137px;
     height: 137px;
     border-radius: 50%;
+    transition: all 0.2s linear;
     &:hover {
-      transition: all 0.2s linear;
       transform: scale(1.1);
       img {
-        transition: all 0.2s linear;
         filter: drop-shadow(0 0 15px black);
       }
     }
     &:nth-child(1),
     &:nth-child(6) {
       &:hover {
-        transform-origin: center 0%;
-        transform: scale(1.1) translateY(-55%);
+        transform-origin: center;
+        transform: translateY(-55%) scale(1.1);
       }
     }
     &:nth-child(1) {
