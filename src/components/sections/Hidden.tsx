@@ -3,7 +3,7 @@ import { breakpoints } from "../../breakpoints/breakpoints";
 import { colors } from "../../data/colors";
 import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
-// import TimeComp from "./TimeComp";
+import TimeComp from "./TimeComp";
 
 const Hidden: React.FC = () => {
   return (
@@ -11,9 +11,9 @@ const Hidden: React.FC = () => {
       <HeaderOrn logo='hidden' />
       <HeaderDescWrap>
         <p>CS祭終了後に解放されます。</p>
-        {/* <p>
+        <p>
           解放まであと <TimeComp />
-        </p> */}
+        </p>
       </HeaderDescWrap>
     </HiddenSection>
   );
