@@ -1,13 +1,12 @@
 import styled from "styled-components";
-import { breakpoints } from "../../breakpoints/breakpoints";
 import StoryEachText from "./StoryEachText";
 
 const StoryText: React.FC = () => {
   return (
     <TextWrap>
       <StoryEachText key={1}>私はヴェルスラミナに通う生徒。</StoryEachText>
-      <br />
-      <br />
+      <br className='text-sep' />
+      <br className='text-sep' />
       <StoryEachText key={2}>
         ヴェルスラミナとは
         <br />
@@ -17,8 +16,8 @@ const StoryText: React.FC = () => {
         <br />
         怪盗を育成するための施設。
       </StoryEachText>
-      <br />
-      <br />
+      <br className='text-sep' />
+      <br className='text-sep' />
       <StoryEachText key={3}>
         実力が認められ、アウロラから
         <br />
@@ -28,8 +27,8 @@ const StoryText: React.FC = () => {
         <br />
         怪盗として暗躍することとなる。
       </StoryEachText>
-      <br />
-      <br />
+      <br className='text-sep' />
+      <br className='text-sep' />
       <StoryEachText key={4}>
         ある日私が授業を終え
         <br />
@@ -37,8 +36,8 @@ const StoryText: React.FC = () => {
         <br />
         一通の封筒が届いていた。
       </StoryEachText>
-      <br />
-      <br />
+      <br className='text-sep' />
+      <br className='text-sep' />
       <StoryEachText key={5}>
         中を見てみるとゼニス号の乗車券と
         <br />
@@ -46,8 +45,8 @@ const StoryText: React.FC = () => {
         <br />
         書類には入団試験の内容が書かれていた。
       </StoryEachText>
-      <br />
-      <br />
+      <br className='text-sep' />
+      <br className='text-sep' />
       <StoryEachText key={6}>
         入団試験の内容はゼニス号に乗り込み
         <br />
@@ -62,18 +61,11 @@ const StoryText: React.FC = () => {
 };
 export default StoryText;
 
-const fontSizes = {
-  s: "font-size: 9px;",
-  m: "font-size: 10px;",
-  l: "font-size: 13px;",
-  xl: "font-size: 16px;",
-};
-
 const TextWrap = styled.p`
   width: 100%;
   height: 100%;
   display: inline-block;
-  font-size: 6px;
+  font-size: calc(9px + 0.5vw);
   font-weight: 700;
   span {
     visibility: hidden;
@@ -91,28 +83,9 @@ const TextWrap = styled.p`
       clip-path: inset(0 0 0 0);
     }
   }
-  @media (min-width: 300px) {
-    ${fontSizes.s}
-  }
-  @media (min-width: 366px) {
-    ${fontSizes.m}
-  }
-  @media (min-width: 425px) {
-    ${fontSizes.l}
-  }
-  @media (min-width: 516px) {
-    ${fontSizes.xl}
-  }
-  @media (min-width: ${breakpoints.m}) {
-    ${fontSizes.s}
-  }
-  @media (min-width: 738px) {
-    ${fontSizes.m}
-  }
-  @media (min-width: ${breakpoints.l}) {
-    ${fontSizes.l}
-  }
-  @media (min-width: 1190px) {
-    ${fontSizes.xl}
+  .text-sep {
+    display: block;
+    content: "";
+    margin: 10px 0;
   }
 `;

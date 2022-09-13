@@ -32,6 +32,6 @@ const HeaderWrap = styled.div`
 `;
 
 const HeaderImg = styled.img`
-  height: 35%;
+  height: 30%;
   transform: translateY(-7px);
 `;

@@ -57,13 +57,20 @@ const StCloudBottom = styled(StCloudTop)`
 `;
 
 const StoryContent = styled.div`
+  width: 90%;
   background-image: url(${PubUrl}/img/story/story_bg.png?ver=1.0.0);
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
-  padding: 90px 0px;
+  margin-top: 34px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 50px 0px;
   display: flex;
   justify-content: center;
   align-items: center;
   transform: rotateZ(0deg);
+  @media (min-width: 340px) {
+    padding: 90px 0;
+  }
 `;

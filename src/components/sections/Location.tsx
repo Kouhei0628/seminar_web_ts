@@ -9,27 +9,33 @@ const Location: React.FC = () => {
   return (
     <LocationSection ref={ref} id='location'>
       <HeaderOrn logo='location' />
-      <LocationTextA>
-        <p>バス乗り場 横浜線相原駅 徒歩2分</p>
-      </LocationTextA>
-      <LocationMap className={`${inView ? "visible" : ""}`}>
-        <img
-          src={`${PubUrl}/img/location/loc_1.png?ver=1.0.0`}
-          alt='バス乗り場から教室までの道のり'
-        />
-      </LocationMap>
-      <LocationTextA>
-        <p>東京造形大学８号館２階「８−２０６」教室</p>
-      </LocationTextA>
-      <LocationAdress>
-        <p>〒192-0992 東京都八王子市宇津貫町１５５６</p>
-      </LocationAdress>
-      <LocationMap>
-        <img
-          src={`${PubUrl}/img/location/loc_2.png?ver=1.0.0`}
-          alt='東京造形大学全体図'
-        />
-      </LocationMap>
+      <LocationFlexWrap>
+        <div>
+          <LocationTextA>
+            <p>バス乗り場 横浜線相原駅 徒歩2分</p>
+          </LocationTextA>
+          <LocationMap className={`${inView ? "visible" : ""}`}>
+            <img
+              src={`${PubUrl}/img/location/loc_1.png?ver=1.0.0`}
+              alt='バス乗り場から教室までの道のり'
+            />
+          </LocationMap>
+        </div>
+        <div>
+          <LocationTextA>
+            <p>東京造形大学８号館２階「８−２０６」教室</p>
+          </LocationTextA>
+          <LocationAdress>
+            <p>〒192-0992 東京都八王子市宇津貫町１５５６</p>
+          </LocationAdress>
+          <LocationMap>
+            <img
+              src={`${PubUrl}/img/location/loc_2.png?ver=1.0.0`}
+              alt='東京造形大学全体図'
+            />
+          </LocationMap>
+        </div>
+      </LocationFlexWrap>
     </LocationSection>
   );
 };
@@ -46,6 +52,12 @@ const LocationSection = styled.section`
   }
   @media (min-width: 940px) {
     margin: -252px auto 0 auto;
+  }
+`;
+const LocationFlexWrap = styled.div`
+  @media (min-width: ${breakpoints.l}) {
+    display: flex;
+    gap: 12px;
   }
 `;
 const LocationTextA = styled.div`
@@ -65,6 +77,9 @@ const LocationTextA = styled.div`
   p {
     margin: 0;
     font-size: 12px;
+    @media (min-width: ${breakpoints.l}) {
+      font-size: calc(5px + 0.5vw);
+    }
   }
 `;
 const LocationAdress = styled.div`
@@ -83,6 +98,9 @@ const LocationAdress = styled.div`
   }
   p {
     font-size: 12px;
+    @media (min-width: ${breakpoints.l}) {
+      font-size: calc(5px + 0.5vw);
+    }
   }
 `;
 const LocationMap = styled.div`

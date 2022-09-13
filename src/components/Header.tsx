@@ -95,10 +95,11 @@ const CloudWrap = styled.div`
 const CloudTop = styled.div`
   background-image: url(${PubUrl}/img/story/story_bg-top.png?ver=1.0.1);
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: contain;
   background-position: center top;
   width: 100%;
   height: calc(250px + 25vw);
+  transform: translateY(calc(200px - 2.5vw));
   @media (min-width: ${breakpoints.m}) {
     display: none;
     height: 0;
@@ -106,8 +107,10 @@ const CloudTop = styled.div`
 `;
 const CloudBottom = styled(CloudTop)`
   background-image: url(${PubUrl}/img/story/story_bg-bottom.png?ver=1.0.1);
+  background-size: cover;
   background-position: center bottom;
   display: block;
+  transform: translateY(0);
   filter: brightness(95%);
   @media (min-width: ${breakpoints.m}) {
     height: 0;
@@ -144,7 +147,7 @@ const HeaderVisual = styled.div`
       }
     }
     &.blur {
-      transform: translateY(calc(-16vw));
+      transform: translateY(-12vw);
     }
   }
   @media (min-width: ${breakpoints.m}) {

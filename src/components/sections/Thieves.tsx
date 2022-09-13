@@ -55,7 +55,6 @@ const ThievesSection = styled.section`
   width: 100%;
   height: 100%;
   margin: -165px auto;
-  /* margin: 0 auto; */
   transform: translateZ(0);
   @media (min-width: ${breakpoints.m}) {
     width: 74%;
@@ -67,25 +66,29 @@ const Subtitle = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   margin: 20px auto;
-  height: 24px;
-  position: relative;
+  height: calc(11px + 3vw);
+  display: flex;
+  justify-content: center;
+  align-items: center;
   h3 {
-    font-size: 15px;
+    font-size: calc(10px + 1vw);
     margin: 0;
     color: white;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateY(-1px);
   }
 `;
 const ThievesDescr = styled.div`
+  br {
+    display: block;
+    content: "";
+    margin: 8px 0;
+  }
   background-image: url(${PubUrl}/img/thieves/thieves_descbg-s.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 250px;
-  width: 90%;
+  height: calc(214px + 9vw);
+  width: 88%;
   margin: 0 auto;
   padding: 8px 13px;
   display: flex;
@@ -94,26 +97,27 @@ const ThievesDescr = styled.div`
   p {
     margin: 0;
     color: #ffeecf;
-    font-size: 13px;
-    width: 95%;
+    font-size: 12px;
+    width: calc(95% - 2vw);
     opacity: 0;
-    transition: 1s all ease-in-out;
+    transition: 1s opacity ease-in-out;
     &.inview {
       opacity: 1;
     }
   }
   @media (min-width: 383px) {
-    height: 280px;
+    height: calc(280px + 9vw);
     p {
       font-size: 13px;
     }
   }
-  @media (min-width: 410px) {
+  @media (min-width: 450px) {
     background-image: url(${PubUrl}/img/thieves/thieves_descbg-m.svg);
-    height: 180px;
+    width: 85%;
+    height: calc(114px + 9vw);
     p {
       font-size: 11px;
-      width: 90%;
+      width: calc(100% - 11vw);
     }
   }
   @media (min-width: 527px) {
@@ -124,11 +128,10 @@ const ThievesDescr = styled.div`
   }
   @media (min-width: 800px) {
     height: 200px;
-    max-width: 500px;
+    /* max-width: 500px; */
   }
   @media (min-width: ${breakpoints.l}) {
-    max-width: 680px;
-    height: 156px;
+    height: calc(156px + 3vw);
     background-image: url(${PubUrl}/img/thieves/thieves_descbg-l.svg);
     p {
       font-size: 12px;
@@ -148,6 +151,7 @@ const ThievesContent = styled.div`
   justify-content: center;
   align-items: center;
   @media (min-width: ${breakpoints.m}) {
+    width: 90%;
     background-image: url(${PubUrl}/img/thieves/thieves_listbg-l.svg);
   }
   @media (min-width: ${breakpoints.l}) {
@@ -157,7 +161,7 @@ const ThievesContent = styled.div`
 const ThievesList = styled.ul`
   padding: 0;
   margin: 20px auto;
-  width: 89%;
+  width: 91%;
   height: 95%;
   list-style: none;
   display: flex;
@@ -165,6 +169,10 @@ const ThievesList = styled.ul`
   gap: 15px;
   justify-content: center;
   @media (min-width: ${breakpoints.m}) {
+    width: 80%;
+  }
+  @media (min-width: ${breakpoints.l}) {
+    width: 70%;
   }
   li {
     width: 40%;
@@ -192,9 +200,6 @@ const ThievesList = styled.ul`
         }
       }
     }
-    @media (min-width: ${breakpoints.l}) {
-      margin: 30px 0;
-    }
   }
 `;
 const ThievesName = styled.div`
@@ -202,13 +207,18 @@ const ThievesName = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  height: 20px;
+  margin-top: 7px;
+  height: calc(20px + 1vw);
   display: flex;
   justify-content: center;
   align-items: center;
   p {
     margin: 0;
     color: white;
-    font-size: 8px;
+    font-size: calc(7px + 0.5vw);
+    font-weight: 800;
+    @media (min-width: ${breakpoints.m}) {
+      font-size: calc(6px + 0.35vw);
+    }
   }
 `;
