@@ -37,7 +37,7 @@ const MemberListItem: React.FC<Props> = ({ id, name }) => {
 };
 export default MemberListItem;
 
-const multipleOf5: string[] = members
+const arrangeAlternatelyStyle: string[] = members
   .filter(m => m.id % 5 === 0 || (m.id + 1) % 5 === 0)
   .map(
     m =>
@@ -108,7 +108,7 @@ const MemberListItemS = styled.li`
     width: calc(100% / 5);
   }
   @media (max-width: ${breakpoints.m}) {
-    ${multipleOf5}
+    ${arrangeAlternatelyStyle}
   }
   &.inview {
     transform: translateY(-50px);
