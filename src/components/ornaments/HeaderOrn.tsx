@@ -8,33 +8,30 @@ type Props = {
 const HeaderOrn: React.FC<Props> = ({ logo }) => {
   return (
     <HeaderWrap>
-      <HeaderImgA>
-        <HeaderImgB
-          src={`${PubUrl}/img/logos/logo_${logo}-000.svg`}
-          alt={`${logo}のロゴ`}
-        />
-      </HeaderImgA>
+      <HeaderImg
+        src={`${PubUrl}/img/logos/logo_${logo}-000.svg`}
+        alt={`${logo}のロゴ`}
+      />
     </HeaderWrap>
   );
 };
 export default HeaderOrn;
 
 const HeaderWrap = styled.div`
-  position: relative;
   margin: 0 auto;
-  width: 171px;
-`;
-
-const HeaderImgA = styled.div`
+  width: calc(171px + 3vw);
   background-image: url(${PubUrl}/img/common_ribbon.png);
   background-repeat: no-repeat;
   background-size: cover;
-  height: 68px;
+  background-position: center center;
+  height: calc(68px + 3vw);
   display: flex;
   justify-content: center;
   align-items: center;
+  transform: translateZ(0);
 `;
-const HeaderImgB = styled.img`
+
+const HeaderImg = styled.img`
   height: 35%;
-  transform: translateY(-2px);
+  transform: translateY(-7px);
 `;
