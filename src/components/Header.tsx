@@ -17,7 +17,7 @@ const Header: React.FC = React.memo(() => {
         <ProvVisual>
           <img
             className={`${isLoaded ? "visible" : ""}`}
-            src={`${PubUrl}/img/header/header_main.png?ver=1.0.1`}
+            src={`${PubUrl}/img/header/header_main.png?ver=1.0.2`}
             alt='メインヴィジュアル'
           />
         </ProvVisual>
