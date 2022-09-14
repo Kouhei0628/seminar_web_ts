@@ -32,12 +32,12 @@ const Header: React.FC = React.memo(() => {
         <HeaderVisual>
           <img
             className={`header_visual ${isLoaded ? "visible" : ""}`}
-            src={`${PubUrl}/img/header/header_main.png?ver=1.0.1`}
+            src={`${PubUrl}/img/header/header_main.png?ver=1.0.2`}
             alt='メインヴィジュアル'
           />
           <img
             className='blur'
-            src={`${PubUrl}/img/header/header_blur.png?ver=1.0.1`}
+            src={`${PubUrl}/img/header/header_blur.png?ver=1.0.2`}
             alt='ぼかし画像'
           />
         </HeaderVisual>
@@ -119,8 +119,8 @@ const CloudBottom = styled(CloudTop)`
 `;
 const HeaderVisual = styled.div`
   width: 100%;
-  height: 0;
   display: none;
+  transform: translateY(calc(-100px + 11vw));
   & > img {
     width: 100%;
     &.header_visual {
