@@ -26,7 +26,15 @@ const Summary: React.FC = () => {
                     <p>{summary.title}</p>
                   </Title>
                   <Description>
-                    <p>{summary.description}</p>
+                    {summary.title === "場所" ? (
+                      <p>
+                        東京造形大学8号館2階
+                        <br />
+                        「8-206」教室
+                      </p>
+                    ) : (
+                      <p>{summary.description}</p>
+                    )}
                   </Description>
                 </li>
               ))}
