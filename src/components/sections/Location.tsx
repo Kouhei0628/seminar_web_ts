@@ -28,7 +28,7 @@ const Location: React.FC = () => {
           <LocationAdress>
             <p>〒192-0992 東京都八王子市宇津貫町１５５６</p>
           </LocationAdress>
-          <LocationMap>
+          <LocationMap className={`${inView ? "visible" : ""}`}>
             <img
               src={`${PubUrl}/img/location/loc_2.png?ver=1.0.0`}
               alt='東京造形大学全体図'
@@ -107,6 +107,7 @@ const LocationMap = styled.div`
   margin-top: 25px;
   margin-right: auto;
   margin-left: auto;
+  filter: blur(15px);
   width: 90%;
   img {
     width: 100%;
