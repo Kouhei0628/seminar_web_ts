@@ -25,7 +25,7 @@ const members: Members[] = [
   },
   {
     id: 6,
-    name: "金子未来",
+    name: "mirai",
   },
   {
     id: 7,
