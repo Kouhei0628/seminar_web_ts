@@ -67,22 +67,6 @@ const TextWrap = styled.p`
   display: inline-block;
   font-size: calc(9px + 0.5vw);
   font-weight: 700;
-  span {
-    visibility: hidden;
-    &.inview {
-      animation: textIn2 1s ease-in forwards 0.4s;
-    }
-  }
-  @keyframes textIn2 {
-    0% {
-      visibility: hidden;
-      clip-path: inset(0 0 100% 0);
-    }
-    100% {
-      visibility: visible;
-      clip-path: inset(0 0 0 0);
-    }
-  }
   .text-sep {
     display: block;
     content: "";
