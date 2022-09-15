@@ -6,11 +6,10 @@ import { PubUrl } from "../../data/PubUrl";
 import HeaderOrn from "../ornaments/HeaderOrn";
 
 const Thieves: React.FC = () => {
-  const options = {
+  const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
-  };
-  const { ref, inView } = useInView(options);
+  });
   return (
     <ThievesSection id='thieves'>
       <HeaderOrn logo='thieves' />
@@ -34,8 +33,9 @@ const Thieves: React.FC = () => {
         <ThievesList ref={ref}>
           {thieves.map(thief => (
             <li key={thief.id}>
-              <img
-                className={`card ${inView ? "visible" : ""}`}
+              <ThieveImg
+                nth={thief.id}
+                className={`${inView ? "visible" : ""}`}
                 src={`${PubUrl}/img/thieves/thieves_emb${thief.id}.jpg`}
                 alt={thief.alt}
               />
@@ -99,10 +99,23 @@ const ThievesDescr = styled.div`
     color: #ffeecf;
     font-size: 12px;
     width: calc(95% - 2vw);
+    display: inline-block;
+    visibility: hidden;
     opacity: 0;
-    transition: 1s opacity ease-in-out;
     &.inview {
-      opacity: 1;
+      animation: textIn2 1s ease-in forwards 0.4s;
+    }
+    @keyframes textIn2 {
+      0% {
+        opacity: 0;
+        visibility: hidden;
+        clip-path: inset(0 0 100% 0);
+      }
+      100% {
+        opacity: 1;
+        visibility: visible;
+        clip-path: inset(0 0 0 0);
+      }
     }
   }
   @media (min-width: 383px) {
@@ -180,24 +193,27 @@ const ThievesList = styled.ul`
       width: 20%;
     }
     .card {
-      width: 100%;
-      opacity: 0;
-      &.visible {
-        animation: rotate3d 1.1s ease-in-out forwards 0.8s;
-        @keyframes rotate3d {
-          0% {
-            opacity: 0;
-            transform: perspective(1000px) rotateY(-360deg) scale(0.5);
-          }
-          50.1% {
-            opacity: 0.5;
-            transform: perspective(1000px) rotateY(-180deg) scale(0.75);
-          }
-          100% {
-            opacity: 1;
-            transform: perspective(1000px) rotateY(0deg) scale(1);
-          }
-        }
+    }
+  }
+`;
+const ThieveImg = styled.img`
+  width: 100%;
+  opacity: 0;
+  &.visible {
+    animation: rotate3d 1.1s ease-in-out forwards
+      ${({ nth }: { nth: number }) => nth * 0.2}s;
+    @keyframes rotate3d {
+      0% {
+        opacity: 0;
+        transform: perspective(1000px) rotateY(-360deg) scale(0.5);
+      }
+      50.1% {
+        opacity: 0.5;
+        transform: perspective(1000px) rotateY(-180deg) scale(0.75);
+      }
+      100% {
+        opacity: 1;
+        transform: perspective(1000px) rotateY(0deg) scale(1);
       }
     }
   }
