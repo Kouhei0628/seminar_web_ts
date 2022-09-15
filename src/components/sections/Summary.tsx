@@ -1,3 +1,4 @@
+import { useInView } from "react-intersection-observer";
 import styled from "styled-components";
 import { breakpoints } from "../../breakpoints/breakpoints";
 import { colors } from "../../data/colors";
@@ -7,34 +8,29 @@ import HeaderOrn from "../ornaments/HeaderOrn";
 import { StCloudTop } from "./Story";
 
 const Summary: React.FC = () => {
+  const { ref, inView } = useInView({ threshold: 0.5, triggerOnce: true });
   return (
     <SummarySection>
       <CloudWrap>
         <CloudTop />
         <SummWrap id='summary'>
           <HeaderOrn logo='summary' />
-          <SummaryMessage />
+          <SummaryMessage ref={ref} className={`${inView ? "visible" : ""}`} />
           <SummaryContents>
             <SummaryList>
               {summaries.map(summary => (
                 <li key={summary.id}>
-                  <img
+                  <SumImg
+                    nth={summary.id}
+                    className={`${inView ? "visible" : ""}`}
                     src={`${PubUrl}/img/summary/sum_${summary.img}.svg`}
                     alt={`${summary.alt}の画像`}
                   />
                   <Title>
                     <p>{summary.title}</p>
                   </Title>
-                  <Description>
-                    {summary.title === "場所" ? (
-                      <p>
-                        東京造形大学8号館2階
-                        <br />
-                        「8-206」教室
-                      </p>
-                    ) : (
-                      <p>{summary.description}</p>
-                    )}
+                  <Description className='summary-desc'>
+                    {summary.description}
                   </Description>
                 </li>
               ))}
@@ -83,16 +79,53 @@ const SummaryList = styled.ul`
   gap: 15px;
   li {
     width: 45%;
+    overflow: hidden;
     @media (min-width: ${breakpoints.m}) {
       width: 20%;
     }
-    img {
-      width: 100%;
+    &:nth-child(1),
+    :nth-child(2) {
+      .summary-desc {
+        p {
+          font-size: 3.5vw;
+          @media (min-width: ${breakpoints.m}) {
+            font-size: 1.3vw;
+          }
+        }
+      }
     }
   }
   @media (min-width: ${breakpoints.m}) {
     transform: translateY(-50px);
     width: 84%;
+  }
+`;
+const SumImg = styled.img`
+  width: 100%;
+  transform: translateX(100%);
+  margin-bottom: 15px;
+  &.visible {
+    animation: slideIn 1.5s ease-in-out forwards
+      ${({ nth }: { nth: number }) => 0.5 + nth * 0.1}s;
+    @keyframes slideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      70% {
+        opacity: 1;
+        transform: translateX(0%) rotate(0deg);
+      }
+      80% {
+        transform: rotate(-10deg);
+      }
+      90% {
+        transform: rotate(10deg);
+      }
+      100% {
+        transform: rotate(0deg);
+      }
+    }
   }
 `;
 
@@ -108,6 +141,11 @@ const SummaryMessage = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  &.visible {
+    opacity: 1;
+  }
   @media (min-width: 508px) {
     height: calc(250px + 8vw);
   }
@@ -129,10 +167,14 @@ const Title = styled.div`
   background-size: contain;
   background-position: center;
   margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
   p {
     margin: 0;
     color: white;
-    font-size: 15px;
+    display: inline-block;
+    transform: translateY(-1px);
   }
 `;
 const Description = styled.div`
@@ -151,6 +193,9 @@ const Description = styled.div`
     font-size: 9px;
     width: max(87%, 150px);
     font-weight: 600;
+    span {
+      color: #c30000;
+    }
     @media (min-width: 377px) {
       font-size: 12px;
     }
