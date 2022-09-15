@@ -13,6 +13,7 @@ const Loading: React.FC = () => {
           alt={`ロード中のロゴ`}
         />
       </div>
+      <h2>Loading...</h2>
     </LoadWrap>
   );
 };
@@ -34,6 +35,7 @@ const LoadWrap = styled.div`
   justify-content: center;
   align-items: center;
   display: flex;
+  flex-direction: column;
   visibility: visible;
   transition: all ease-in-out 0.5s;
   transition-delay: 1s;
@@ -43,7 +45,7 @@ const LoadWrap = styled.div`
     visibility: hidden;
   }
   div {
-    width: 80vw;
+    width: 70vw;
     height: 40vw;
     margin: 0 auto;
     background-image: url(${PubUrl}/img/loading.png?ver=1.0.1);
@@ -67,5 +69,9 @@ const LoadWrap = styled.div`
         }
       }
     }
+  }
+  h2 {
+    font-size: 25px;
+    color: #e4e4e4;
   }
 `;
