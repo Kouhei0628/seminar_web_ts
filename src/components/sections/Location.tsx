@@ -11,9 +11,9 @@ const Location: React.FC = () => {
       <HeaderOrn logo='location' />
       <LocationFlexWrap>
         <div>
-          <LocationTextA>
-            <p>バス乗り場 横浜線相原駅 徒歩2分</p>
-          </LocationTextA>
+          <LocationText>
+            <h4>バス乗り場 横浜線相原駅 徒歩2分</h4>
+          </LocationText>
           <LocationMap className={`${inView ? "visible" : ""}`}>
             <img
               src={`${PubUrl}/img/location/loc_1.png?ver=1.0.0`}
@@ -22,9 +22,9 @@ const Location: React.FC = () => {
           </LocationMap>
         </div>
         <div>
-          <LocationTextA>
-            <p>東京造形大学８号館２階「８−２０６」教室</p>
-          </LocationTextA>
+          <LocationText>
+            <h4>東京造形大学８号館２階「８−２０６」教室</h4>
+          </LocationText>
           <LocationAdress>
             <p>〒192-0992 東京都八王子市宇津貫町１５５６</p>
           </LocationAdress>
@@ -48,19 +48,19 @@ const LocationSection = styled.section`
   text-align: center;
   overflow: hidden;
   @media (min-width: ${breakpoints.m}) {
-    width: 59%;
+    width: 89%;
   }
   @media (min-width: 940px) {
     margin: -252px auto 0 auto;
   }
 `;
 const LocationFlexWrap = styled.div`
-  @media (min-width: ${breakpoints.l}) {
+  @media (min-width: 790px) {
     display: flex;
     gap: 12px;
   }
 `;
-const LocationTextA = styled.div`
+const LocationText = styled.div`
   background-image: url(${PubUrl}/img/location/loc_txtbg.svg?ver=1.0.0);
   background-repeat: no-repeat;
   background-size: contain;
@@ -68,17 +68,23 @@ const LocationTextA = styled.div`
   margin-top: 30px;
   margin-left: auto;
   margin-right: auto;
-  width: auto;
-  padding: 10px;
+  width: 90%;
+  padding: 4vw 0;
   color: white;
   @media (min-width: ${breakpoints.m}) {
-    width: 78%;
+    width: 80%;
   }
-  p {
+  h4 {
     margin: 0;
-    font-size: 12px;
+    font-size: 3.5vw;
+    @media (min-width: ${breakpoints.m}) {
+      font-size: 2.5vw;
+    }
+    @media (min-width: 790px) {
+      font-size: 1.5vw;
+    }
     @media (min-width: ${breakpoints.l}) {
-      font-size: calc(5px + 0.5vw);
+      font-size: 1.2vw;
     }
   }
 `;
@@ -113,7 +119,7 @@ const LocationMap = styled.div`
     width: 100%;
   }
   &.visible {
-    animation: mapFadeIn 1s linear forwards;
+    animation: mapFadeIn 1.9s linear forwards;
     @keyframes mapFadeIn {
       0% {
         filter: blur(15px);
