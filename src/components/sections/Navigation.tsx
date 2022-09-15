@@ -39,14 +39,15 @@ const NavigationStyle = styled.nav`
   width: 100%;
   height: 280px;
   margin: 0px auto;
-  @media (max-width: 629px) {
-    display: none;
+  display: none;
+  @media (min-width: ${breakpoints.m}) {
+    display: block;
   }
   @media (min-width: 750px) {
-    margin: 0 auto;
+    margin: 0 auto -10vw auto;
   }
   @media (min-width: ${breakpoints.l}) {
-    margin: 200px auto 0 auto;
+    margin: calc(100px + 3vw) auto -10vw auto;
   }
 `;
 const NavListWrap = styled.div`
