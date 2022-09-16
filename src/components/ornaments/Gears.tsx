@@ -6,7 +6,6 @@ type Props = {
 };
 
 const Gears: React.FC<Props> = ({ isLeft }) => {
-  // それぞれの歯車の位置と大きさ回転速度、種類をランダム出力
   const random = (min: number, max: number): number =>
     Math.floor(Math.random() * (max - min + 1)) + min;
   // 歯車の位置
